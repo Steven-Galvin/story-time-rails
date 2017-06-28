@@ -1,0 +1,36 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+p {
+  text-indent: 0;
+}
+.lesson {
+  white-space: pre;
+}
+input, select, text-area, label {
+  display: block;
+}
+
+a {
+  display: inline-block;
+  color: grey;
+  transition: all .2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  transform: scale(1.2) ;
+}
+.my-nav {
+  border-bottom: solid 1px #333;
+  width: 100%;
+  padding-top: 1em;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}

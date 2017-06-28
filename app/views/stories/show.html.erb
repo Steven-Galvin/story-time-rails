@@ -4,17 +4,18 @@
 <% if @story.sentences.any? %>
   <h4>Here are the sentences for this story:</h4>
 
-  <ul>
-    <% @story.sentences.each do |sentence| %>
-      <li>
-          <%= sentence.author %> | <%= sentence.content %> | <%= image_tag "#{sentence.image}.jpg" %>
-        <%= link_to "Edit", edit_story_sentence_path(@story, sentence) %> |
-        <%= link_to "Delete", story_sentence_path(@story, sentence),
-                                 :data => {:confirm => "Are you sure?",
-                                                :method => "delete"} %>
-      </li>
-    <% end %>
-  </ul>
+  <% @story.sentences.each do |sentence| %>
+    <div class="story-tile">
+      <div class="content-author">
+        <%= sentence.content %>
+        <br>
+        <small>by - <%= sentence.author %></small>
+      </div>
+      <div class="sentence-image">
+        <%= image_tag "#{sentence.image}.jpg" %>
+      </div>
+    </div>
+  <% end %>
 <% else %>
   <p>There are no sentences yet!</p>
 <% end %>

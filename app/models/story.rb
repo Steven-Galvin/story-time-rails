@@ -9,5 +9,4 @@ class Story < ActiveRecord::Base
     .group("stories.id")
     .order("sentences_count DESC")
     )}
-
 end
