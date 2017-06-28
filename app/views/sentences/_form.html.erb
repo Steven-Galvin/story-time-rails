@@ -1,0 +1,12 @@
+<%= render('layouts/errors', :object => @sentence) %>
+
+<%= image_tag "#{@randImage}.jpg" %>
+
+<%= form_for [@story, @sentence] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :image, :value => @randImage %>
+  <p><%= f.submit %></p>
+<% end %>

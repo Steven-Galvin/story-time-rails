@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+story_list = [
+  "The Best Adventure EVER",
+  "The Goat Who Could",
+  "Philosophy of James",
+  "Horse",
+  "Birch Horse",
+  "Cherry HOOOORSE"
+]
+
+story_list.each do |title|
+  Story.create( title: title)
+end
