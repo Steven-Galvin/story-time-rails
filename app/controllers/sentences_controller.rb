@@ -2,7 +2,7 @@ class SentencesController < ApplicationController
   def new
     @story = Story.find(params[:story_id])
     @sentence = @story.sentences.new
-    @randImage = rand(4)
+    @randImage = rand(12)
   end
 
   def create
