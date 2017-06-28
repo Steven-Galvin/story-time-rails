@@ -7,7 +7,7 @@
   <ul>
     <% @story.sentences.each do |sentence| %>
       <li>
-          <%= sentence.author %> | <%= sentence.content %> | <%= sentence.image %>
+          <%= sentence.author %> | <%= sentence.content %> | <%= image_tag "#{sentence.image}.jpg" %>
         <%= link_to "Edit", edit_story_sentence_path(@story, sentence) %> |
         <%= link_to "Delete", story_sentence_path(@story, sentence),
                                  :data => {:confirm => "Are you sure?",

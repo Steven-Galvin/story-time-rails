@@ -1,3 +1,14 @@
+
+<p>
+  The story so far...
+</p>
+  <% @story.sentences.each do |sentence| %>
+    <% if sentence.image %>
+      <%= sentence.content %>   <%= image_tag "#{sentence.image}.jpg" %>
+    <% end %>
+  <% end %>
+
+<hr>
 <h1>New sentence for <%= @story.title %></h1>
 
 <%= render 'form' %>

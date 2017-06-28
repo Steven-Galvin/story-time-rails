@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.all
+    sortedStories = Story.all.sort {|a, b|  b.created_at <=> a.created_at}
+    @stories = sortedStories
     render :index
   end
 
@@ -44,6 +45,6 @@ class StoriesController < ApplicationController
 
 private
   def story_params
-    params.require(:story).permit(:title)
+    params.require(:story).permit(:title, :created_at)
   end
 end
