@@ -1,8 +1,9 @@
 <h1>Stories</h1>
-
+<%= link_to 'Newest', {:controller => "stories", :action => "index", :filter => "newest" } %>
+<%= link_to 'Most Popular', {:controller => "stories", :action => "index", :filter => "popular" } %>
 <ul>
   <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story) %></li>
+    <li><%= link_to story.title, story_path(story) %> | created: <%= story.created_at.strftime('%x') %></li>
   <% end %>
 </ul>
 

@@ -1,7 +1,11 @@
 class StoriesController < ApplicationController
   def index
-    sortedStories = Story.all.sort {|a, b|  b.created_at <=> a.created_at}
-    @stories = sortedStories
+    @stories = Story.all
+    if params[:filter] === "newest"
+      @stories = Story.sortByNewest
+    elsif params[:filter] === "popular"
+      @stories =  Story.sortByCoolFactor
+    end
     render :index
   end
 
